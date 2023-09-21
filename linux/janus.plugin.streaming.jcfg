@@ -1,0 +1,9 @@
+rtsp: {
+	type = "rtsp"
+	description = "cam"
+	audio = false
+	video = true
+	videobufferkf = true
+	url = "rtsp://@IP@:8554/cam"
+	rtsp_failcheck = false
+}

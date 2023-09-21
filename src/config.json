@@ -1,0 +1,5 @@
+{
+  "janus_rel_url": "/janus",
+  "config_rel_url": "/config.json",
+  "log_rel_url": "/log.txt"
+}

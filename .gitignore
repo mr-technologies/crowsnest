@@ -1,0 +1,13 @@
+/dist
+/node_modules
+/npm-debug.log
+
+# macOS
+.DS_Store
+
+# JetBrains
+/.idea/
+
+# vim
+.*.swp
+.swp

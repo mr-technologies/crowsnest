@@ -1,0 +1,185 @@
+// Element UI colors
+
+$gray-darkest: #303133;
+$gray-darker: #606266;
+$gray-dark: #909399;
+$gray: #C0C4CC;
+$gray-light: #DCDFE6;
+$gray-lighter: #E4E7ED;
+$gray-lightest: #EBEEF5;
+$gray-silver: #F2F6FC;
+
+
+$red: #F56C6C;
+$orange: #E6A23C;
+$green: #67C23A;
+$blue: #409EFF;
+
+$yellow-highlight: #FEFBEC;
+
+$text-color: $gray-darkest;
+$text-color-secondary: $gray;
+$link-color: $blue;
+
+$border-radius: 6px;
+
+$font-family-sans-serif:
+  // Cross-platform generic font family (default user interface font)
+        system-ui,
+          // Safari for macOS and iOS (San Francisco)
+        -apple-system,
+          // Windows
+        "Segoe UI",
+          // Android
+        Roboto,
+          // Basic web fallback
+        "Helvetica Neue", Arial,
+          // Linux
+        "Noto Sans",
+        "Liberation Sans",
+          // Sans serif fallback
+        sans-serif,
+          // Emoji fonts
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$font-family-monospace:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo, Monaco,
+        "Cascadia Mono", "Segoe UI Mono",
+        "Roboto Mono",
+        "Oxygen Mono",
+        "Ubuntu Monospace",
+        "Source Code Pro",
+        "Fira Mono",
+        "Droid Sans Mono",
+        "Courier New", monospace;
+
+
+html, body {
+  height: 100%;
+  color: $text-color;
+  font-family: $font-family-sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+a {
+  color: $link-color;
+  &:hover, &:focus {
+    color: darken($link-color, 10%);
+  }
+}
+
+#app {
+  height: 100%;
+}
+
+input {
+  width: 100%;
+  background: #fff;
+  padding: 0.5rem 0.7rem;
+  border-radius: $border-radius;
+  height: 40px;
+  margin-top: 1rem;
+  display: block;
+  box-shadow: inset 0 0 0 2px $gray-lighter;
+  &:focus {
+    box-shadow: inset 0 0 0 2px $link-color;
+  }
+  &:disabled {
+    background-color: $gray-silver;
+  }
+}
+
+label, .label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  height: 40px;
+  min-width: 100px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  border-radius: $border-radius;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  position: relative;
+  &.btn-success {
+    background-color: rgba($green, 0.1);
+    color: $green;
+    box-shadow: inset 0 0 0 2px $green;
+    &:hover, &:focus, &:disabled, &.disabled {
+      background-color: $green;
+      color: #fff;
+    }
+  }
+  &.btnoff {
+    background-color: rgba($red, 0.1);
+    color: $red;
+    box-shadow: inset 0 0 0 2px $red;
+    &:hover, &:focus, &:disabled, &.disabled {
+      background-color: $red;
+      color: #fff;
+    }
+  }
+  &.btnon {
+    background-color: rgba($green, 0.1);
+    color: $green;
+    box-shadow: inset 0 0 0 2px $green;
+    &:hover, &:focus, &:disabled, &.disabled {
+      background-color: $green;
+      color: #fff;
+    }
+  }
+  &.btn-info {
+    background-color: rgba($blue, 0.1);
+    box-shadow: inset 0 0 0 2px $blue;
+    color: $blue;
+    &:hover, &:focus, &:disabled, &.disabled {
+      background-color: $blue;
+      color: #fff;
+    }
+  }
+  &:disabled, .disabled {
+    opacity: 0.7;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: calc(50% - 10px);
+    top: calc(50% - 10px);;
+    border: 2px solid transparent;
+    border-right-color: white;
+    border-radius: 50%;
+    animation: button-anim 0.7s linear infinite;
+    opacity: 0;
+  }
+
+  @keyframes button-anim {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &.loading {
+    color: transparent !important;
+  }
+
+  &.loading::after {
+    opacity: 1;
+  }
+}

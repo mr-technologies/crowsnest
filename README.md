@@ -1,3 +1,5 @@
+<img src="screenshot.png" alt="screenshot" height="450"/>
+
 # `crowsnest`
 
 Web interface sample called `crowsnest` demonstrates the possibility to control runtime parameters of IFF SDK pipeline and preview the video stream through an ordinary web browser.

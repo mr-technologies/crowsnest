@@ -13,7 +13,7 @@ User interface is self-documented in "About" tab of the presented web page.
 ## Installation
 
 `linux/install.sh` installation script is provided as a reference.
-It was tested on NVIDIA Jetson platform with L4T 32.7 operating system.
+It was tested on Ubuntu 20.04, NVIDIA Jetson Linux (L4T) 32.7 and 35.4.
 On success it prints out instructions for final setup steps.
 
 ## Deployment of modifications

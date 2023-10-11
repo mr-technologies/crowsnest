@@ -9,6 +9,7 @@ IP="127.0.0.1"
 INSTALL_ROOT=/opt/mrtech
 JOBS_PARAM="-j$(getconf _NPROCESSORS_ONLN || echo 1)"
 LIBNICE_VERSION="0.1.17"
+LIBSRTP_VERSION="2.5.0"
 
 sudo mkdir $INSTALL_ROOT
 sudo chown $(whoami): $INSTALL_ROOT
@@ -21,11 +22,12 @@ sudo apt install -y \
     cmake \
     curl \
     gengetopt \
+    git \
     libconfig-dev \
-    libcurl4-gnutls-dev \
+    libcurl4-nss-dev \
     libglib2.0-dev \
     libjansson-dev \
-    libsrtp2-dev \
+    libnss3-dev \
     libtool \
     nginx \
     npm \
@@ -42,6 +44,14 @@ echo "Done."
 echo "Building janus and its dependencies..."
 mkdir janus
 pushd janus
+
+curl -L https://github.com/cisco/libsrtp/archive/refs/tags/v${LIBSRTP_VERSION}.tar.gz -o libsrtp-${LIBSRTP_VERSION}.tar.gz
+tar -xf libsrtp-${LIBSRTP_VERSION}.tar.gz
+pushd libsrtp-${LIBSRTP_VERSION}
+./configure --enable-nss --prefix $INSTALL_ROOT
+make $JOBS_PARAM shared_library
+make install
+popd
 
 curl -LO https://libnice.freedesktop.org/releases/libnice-${LIBNICE_VERSION}.tar.gz
 tar -xf libnice-${LIBNICE_VERSION}.tar.gz

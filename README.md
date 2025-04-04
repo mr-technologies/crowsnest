@@ -2,7 +2,7 @@
 
 # `crowsnest`
 
-Web interface sample called `crowsnest` demonstrates the possibility to control runtime parameters of IFF SDK pipeline and preview the video stream through an ordinary web browser.
+Web interface sample called `crowsnest` demonstrates the possibility to control runtime parameters of [MRTech IFF SDK](https://mr-te.ch/iff-sdk) pipeline and preview the video stream through an ordinary web browser.
 It is located in `samples/03_webrtc` directory of IFF SDK package.
 Web application code is based on [Vue.js](https://vuejs.org/) framework.
 [Janus](https://janus-legacy.conf.meetecho.com/) server is used to convert RTSP stream (as provided by IFF SDK) to WebRTC protocol supported by modern web browsers.

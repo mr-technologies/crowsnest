@@ -24,7 +24,6 @@ sudo apt install -y \
     gengetopt \
     git \
     libconfig-dev \
-    libcurl4-nss-dev \
     libglib2.0-dev \
     libjansson-dev \
     libnss3-dev \
@@ -32,11 +31,15 @@ sudo apt install -y \
     nginx \
     npm \
     ssl-cert
+if ! sudo apt install -y libcurl4-nss-dev
+then
+    sudo apt install -y libcurl4-gnutls-dev
+fi
 echo "Done."
 
 echo "Updating nodejs..."
 npm config set prefix $INSTALL_ROOT
-npm install -g n
+npm --prefix=$INSTALL_ROOT install -g n
 N_PREFIX=$INSTALL_ROOT n 16
 hash -r
 echo "Done."
